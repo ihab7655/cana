@@ -39,11 +39,6 @@ button:hover {
 
 
 
-.date-field {
-    width: calc(33.33% - 8px); /* العرض محسوب */
-    display: inline-block;
-    margin-right: 8px;
-}
 
 .date-container {
     display: flex;
