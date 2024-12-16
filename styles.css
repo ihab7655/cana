@@ -227,31 +227,3 @@ td {
     margin-top: 20px;
 }
 
-/* تنسيقات الأجهزة الصغيرة */
-@media (max-width: 600px) {
-    .logo img {
-        max-width: 100px; 
-    }
-    .instructions, .status-form, form {
-        padding: 10px;
-    }
-    button {
-        padding: 8px;
-        font-size: 16px;
-        height: auto;
-    }
-    input, select {
-        height: 35px;
-    }
-    .date-field {
-        width: calc(33.33% - 6px);
-        margin-right: 6px;
-    }
-    #results-content {
-        width: 90%; /* Adjust width for smaller screens */
-        margin: 25% auto; /* Adjust margin for smaller screens */
-    }
-    .close {
-        font-size: 24px; /* Adjust close button size for smaller screens */
-    }
-}
