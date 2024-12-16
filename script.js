@@ -101,8 +101,4 @@ function showResults(data) {
     errorMessage.style.display = 'block';
     modal.style.display = 'none';
   }
-}
-
-document.querySelector('.close').addEventListener('click', function() {
-  document.getElementById('results-modal').style.display = 'none';
-});
+document.getElementById('loader').style.display = 'none'; document.getElementById('content').style.display = 'block';
