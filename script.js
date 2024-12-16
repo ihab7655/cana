@@ -71,13 +71,11 @@ function checkStatus() {
   }, 3000); // مدة الانتظار 3 ثواني
 }
 
-function showLoader() {
-  document.getElementById('loader').style.display = 'flex';
-}
-
-function hideLoader() {
+window.addEventListener('load', function () {
   document.getElementById('loader').style.display = 'none';
-}
+  document.getElementById('content').style.display = 'block';
+});
+
 
 function showResults(data) {
   const modal = document.getElementById('results-modal');
