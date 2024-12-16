@@ -164,61 +164,7 @@ label {
     text-align: center;
 }
 
-/* تنسيقات الشاشة المنبثقة */
-#results-modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 50%; 
-    height: 50%; 
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.4); 
-}
 
-#results-content {
-    background-color: #fefefe; /* لون الخلفية */
-    margin: 15% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; 
-    max-width: 600px; 
-    border-radius: 8px; /* الحواف الدائرية */
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-th {
-    background-color: #f2f2f2; /* لون الخلفية */
-}
-
-td {
-    background-color: #fff; /* لون الخلفية */
-}
 
 #errorMessage {
     display: none;
