@@ -37,8 +37,12 @@ function toggleApplicationNumberField() {
 }
 
 function checkStatus() {
-  // عرض شاشة التحميل
-  document.getElementById('loadingScreen').style.display = 'flex';
+  const loadingScreen = document.getElementById('loadingScreen');
+  if (loadingScreen) {
+    loadingScreen.style.display = 'flex'; // عرض شاشة التحميل
+  } else {
+    console.error('Element with id "loadingScreen" not found.');
+  }
 
   setTimeout(function() {
     const applicationNumber = document.getElementById('applicationNumber').value;
@@ -69,8 +73,9 @@ function checkStatus() {
       showResults(null);
     }
 
-    // إخفاء شاشة التحميل
-    document.getElementById('loadingScreen').style.display = 'none';
+    if (loadingScreen) {
+      loadingScreen.style.display = 'none'; // إخفاء شاشة التحميل
+    }
   }, 3000); // مدة الانتظار 3 ثواني
 }
 
