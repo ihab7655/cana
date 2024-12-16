@@ -1,0 +1,246 @@
+:root {
+    --primary-color: #dc3545;
+    --secondary-color: #007bff;
+    --background-color: #f8f9fa;
+    --text-color: #000;
+    --highlight-color: red; /* إضافة لون النجوم */
+    --font-family: Arial, sans-serif;
+}
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header, footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+header p {
+    margin: 0;
+}
+main {
+    flex: 1;
+    padding: 20px;
+}
+.logo {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+.logo img {
+    max-width: 150px;
+}
+.instructions, .status-form {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+.instructions h2, .note strong, .features strong {
+    margin-top: 0;
+}
+.instructions p, .note p, .features p {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+.note, .features {
+    margin-top: 20px;
+    text-align: center;
+}
+button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #0056b3;
+}
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    margin: 20px auto;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+label, input, select, button, p {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+input, select {
+    height: 40px;
+}
+.date-field {
+    width: calc(33.33% - 8px);
+    display: inline-block;
+    margin-right: 8px;
+}
+.date-container {
+    display: flex;
+    justify-content: space-between;
+}
+.required::after {
+    content: ' *';
+    color: var(--highlight-color); /* تغيير لون النجوم إلى الأحمر */
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 50px;
+    font-size: 18px;
+}
+button:hover {
+    background-color: #45a049;
+}
+#applicationNumberField {
+    display: none;
+}
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+label {
+    font-weight: bold;
+    text-transform: lowercase;
+}
+.instructions h2, .instructions p {
+    text-align: center;
+}
+#results-modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+#results-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 600px; 
+    border-radius: 8px;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: #f2f2f2;
+}
+td {
+    background-color: #fff;
+}
+#errorMessage {
+    display: none;
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
+@media (max-width: 600px) {
+    .logo img {
+        max-width: 100px; 
+    }
+    .instructions, .status-form, form {
+        padding: 10px;
+    }
+    button {
+        padding: 8px;
+        font-size: 16px;
+        height: auto;
+    }
+    input, select {
+        height: 35px;
+    }
+    .date-field {
+        width: calc(33.33% - 6px);
+        margin-right: 6px;
+    }
+    #results-content {
+        width: 90%; /* Adjust width for smaller screens */
+        margin: 25% auto; /* Adjust margin for smaller screens */
+    }
+    .close {
+        font-size: 24px; /* Adjust close button size for smaller screens */
+    }
+}
+.spinner {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.loading-text {
+    font-size: 20px;
+    margin-top: 20px;
+}
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+#loadingScreen {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8);
+}
