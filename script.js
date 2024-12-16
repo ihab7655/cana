@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     "Slovenia", "Spain", "Sweden", "Switzerland", "Turkey", "Ukraine", "United Kingdom"
   ];
 
+  // إضافة قائمة البلدان إلى عنصر select
   const countrySelect = document.getElementById('countryOfBirth');
 
   if (countrySelect) {
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// وظيفة إظهار وإخفاء حقل رقم الطلب
 function toggleApplicationNumberField() {
   const applicationNumberField = document.getElementById('applicationNumberField');
   const statusSelect = document.getElementById('status');
@@ -36,8 +38,9 @@ function toggleApplicationNumberField() {
   }
 }
 
+// وظيفة فحص حالة الطلب
 function checkStatus() {
-  showLoader();
+  showLoader(); // عرض شاشة التحميل
   setTimeout(function() {
     const applicationNumber = document.getElementById('applicationNumber').value;
     const countryOfBirth = document.getElementById('countryOfBirth').value;
@@ -49,12 +52,14 @@ function checkStatus() {
     const expiryMonth = document.getElementById('expiryMonth').value;
     const expiryYear = document.getElementById('expiryYear').value;
 
+    // التحقق من صحة المعلومات المدخلة
     if (applicationNumber === 'j553344' && 
         countryOfBirth === 'Syria' && 
         passportNumber === 'N01133502' && 
         issueDay === '19' && issueMonth === '04' && issueYear === '2024' && 
         expiryDay === '18' && expiryMonth === '10' && expiryYear === '2026') {
       
+      // عرض النتائج إذا كانت البيانات متطابقة
       showResults({
         applicationNumber: applicationNumber,
         status: "مقبول",
@@ -64,21 +69,25 @@ function checkStatus() {
       });
 
     } else {
+      // عرض رسالة خطأ إذا كانت البيانات غير متطابقة
       showResults(null);
     }
 
-    hideLoader();
+    hideLoader(); // إخفاء شاشة التحميل
   }, 3000); // مدة الانتظار 3 ثواني
 }
 
+// وظيفة عرض شاشة التحميل
 function showLoader() {
   document.getElementById('loader').style.display = 'flex';
 }
 
+// وظيفة إخفاء شاشة التحميل
 function hideLoader() {
   document.getElementById('loader').style.display = 'none';
 }
 
+// وظيفة عرض النتائج
 function showResults(data) {
   const modal = document.getElementById('results-modal');
   const applicationNumberElem = document.getElementById('resultApplicationNumber');
@@ -89,6 +98,7 @@ function showResults(data) {
   const errorMessage = document.getElementById('errorMessage');
 
   if (data) {
+    // تعبئة البيانات في الشاشة المنبثقة إذا كانت البيانات متاحة
     applicationNumberElem.textContent = data.applicationNumber;
     statusElem.textContent = data.status;
     submissionDateElem.textContent = data.submissionDate;
@@ -98,11 +108,11 @@ function showResults(data) {
     errorMessage.style.display = 'none';
     modal.style.display = 'block';
   } else {
+    // عرض رسالة خطأ إذا لم تكن البيانات متاحة
     errorMessage.style.display = 'block';
     modal.style.display = 'none';
   }
 }
 
-document.querySelector('.close').addEventListener('click', function() {
-  document.getElementById('results-modal').style.display = 'none';
-});
+// وظيفة إغلاق الشاشة المنبثقة
+document.querySelector('.close').addEventListener('click',
