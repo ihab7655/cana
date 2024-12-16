@@ -1,16 +1,6 @@
 
 
-/* تنسيقات الرأس والتذييل */
-header, footer {
-    background-color: var(--primary-color); /* لون الخلفية */
-    color: white; /* لون النص */
-    padding: 10px;
-    text-align: center;
-}
 
-header p {
-    margin: 0;
-}
 
 /* تنسيقات الرئيسي */
 main {
