@@ -42,32 +42,6 @@ main {
     max-width: 150px;
 }
 
-/* تنسيقات تعليمات النموذج */
-.instructions, .status-form {
-    background-color: #ffffff; /* لون الخلفية */
-    border-radius: 8px; /* الحواف الدائرية */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* الظل */
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    width: 100%;
-    box-sizing: border-box; /* Ensure padding is included in width calculation */
-}
-
-.instructions h2, .note strong, .features strong {
-    margin-top: 0;
-}
-
-.instructions p, .note p, .features p {
-    font-size: 0.9em;
-    margin-top: 10px;
-}
-
-/* تنسيقات الملاحظات والميزات */
-.note, .features {
-    margin-top: 20px;
-    text-align: center;
-}
 
 /* تنسيقات الأزرار */
 button {
