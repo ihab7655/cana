@@ -234,7 +234,7 @@ td {
 
 .spinner {
     border: 16px solid #f3f3f3; /* لون الخلفية */
-    border-top: 16px solid #ff0000; /* لون الدائرة بالأحمر */
+    border-top: 16px solid #ff0000; /* لون الخط الأحمر */
     border-radius: 50%;
     width: 120px;
     height: 120px;
