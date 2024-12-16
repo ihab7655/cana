@@ -77,7 +77,6 @@ function showLoader() {
 
 function hideLoader() {
   document.getElementById('loader').style.display = 'none';
-  document.getElementById('results-modal').style.display = 'block';
 }
 
 function showResults(data) {
@@ -99,12 +98,6 @@ function showResults(data) {
     errorMessage.style.display = 'none';
     modal.style.display = 'block';
   } else {
-    applicationNumberElem.textContent = '';
-    statusElem.textContent = '';
-    submissionDateElem.textContent = '';
-    applicantNameElem.textContent = '';
-    notesElem.textContent = '';
-
     errorMessage.style.display = 'block';
     modal.style.display = 'none';
   }
