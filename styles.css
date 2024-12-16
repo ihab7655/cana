@@ -26,16 +26,6 @@ main {
 
 
 
-.date-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.required::after {
-    content: ' *';
-    color: var(--highlight-color); /* تغيير لون النجوم إلى الأحمر */
-}
-
 /* تنسيقات الأزرار */
 button {
     background-color: #4CAF50; /* لون الخلفية */
