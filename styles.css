@@ -1,10 +1,3 @@
-:root {
-    --primary-color: #dc3545; /* اللون الأساسي */
-    --secondary-color: #007bff; /* اللون الثانوي */
-    --background-color: #f8f9fa; /* لون الخلفية */
-    --text-color: #000; /* لون النص */
-    --highlight-color: red; /* إضافة لون النجوم */
-    --font-family: Arial, sans-serif; /* نوع الخط */
 }
 
 /* تنسيقات الجسم */
