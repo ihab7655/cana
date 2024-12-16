@@ -71,11 +71,13 @@ function checkStatus() {
   }, 3000); // مدة الانتظار 3 ثواني
 }
 
-window.addEventListener('load', function () {
-  document.getElementById('loader').style.display = 'none';
-  document.getElementById('content').style.display = 'block';
-});
+function showLoader() {
+  document.getElementById('loader').style.display = 'flex';
+}
 
+function hideLoader() {
+  document.getElementById('loader').style.display = 'none';
+}
 
 function showResults(data) {
   const modal = document.getElementById('results-modal');
@@ -99,4 +101,8 @@ function showResults(data) {
     errorMessage.style.display = 'block';
     modal.style.display = 'none';
   }
-document.getElementById('loader').style.display = 'none'; document.getElementById('content').style.display = 'block';
+}
+
+document.querySelector('.close').addEventListener('click', function() {
+  document.getElementById('results-modal').style.display = 'none';
+});
