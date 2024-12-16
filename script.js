@@ -37,33 +37,46 @@ function toggleApplicationNumberField() {
 }
 
 function checkStatus() {
-  const applicationNumber = document.getElementById('applicationNumber').value;
-  const countryOfBirth = document.getElementById('countryOfBirth').value;
-  const passportNumber = document.getElementById('passportNumber').value;
-  const issueDay = document.getElementById('issueDay').value;
-  const issueMonth = document.getElementById('issueMonth').value;
-  const issueYear = document.getElementById('issueYear').value;
-  const expiryDay = document.getElementById('expiryDay').value;
-  const expiryMonth = document.getElementById('expiryMonth').value;
-  const expiryYear = document.getElementById('expiryYear').value;
+  showLoader();
+  setTimeout(function() {
+    const applicationNumber = document.getElementById('applicationNumber').value;
+    const countryOfBirth = document.getElementById('countryOfBirth').value;
+    const passportNumber = document.getElementById('passportNumber').value;
+    const issueDay = document.getElementById('issueDay').value;
+    const issueMonth = document.getElementById('issueMonth').value;
+    const issueYear = document.getElementById('issueYear').value;
+    const expiryDay = document.getElementById('expiryDay').value;
+    const expiryMonth = document.getElementById('expiryMonth').value;
+    const expiryYear = document.getElementById('expiryYear').value;
 
-  if (applicationNumber === 'j553344' && 
-      countryOfBirth === 'Syria' && 
-      passportNumber === 'N01133502' && 
-      issueDay === '19' && issueMonth === '04' && issueYear === '2024' && 
-      expiryDay === '18' && expiryMonth === '10' && expiryYear === '2026') {
-    
-    showResults({
-      applicationNumber: applicationNumber,
-      status: "مقبول",
-      submissionDate: "2024-04-01",
-      applicantName: "John Doe",
-      notes: "None"
-    });
+    if (applicationNumber === 'j553344' && 
+        countryOfBirth === 'Syria' && 
+        passportNumber === 'N01133502' && 
+        issueDay === '19' && issueMonth === '04' && issueYear === '2024' && 
+        expiryDay === '18' && expiryMonth === '10' && expiryYear === '2026') {
+      
+      showResults({
+        applicationNumber: applicationNumber,
+        status: "مقبول",
+        submissionDate: "2024-04-01",
+        applicantName: "John Doe",
+        notes: "None"
+      });
 
-  } else {
-    showResults(null);
-  }
+    } else {
+      showResults(null);
+    }
+
+    hideLoader();
+  }, 3000); // مدة الانتظار 3 ثواني
+}
+
+function showLoader() {
+  document.getElementById('loader').style.display = 'flex';
+}
+
+function hideLoader() {
+  document.getElementById('loader').style.display = 'none';
 }
 
 function showResults(data) {
@@ -85,12 +98,6 @@ function showResults(data) {
     errorMessage.style.display = 'none';
     modal.style.display = 'block';
   } else {
-    applicationNumberElem.textContent = '';
-    statusElem.textContent = '';
-    submissionDateElem.textContent = '';
-    applicantNameElem.textContent = '';
-    notesElem.textContent = '';
-
     errorMessage.style.display = 'block';
     modal.style.display = 'none';
   }
