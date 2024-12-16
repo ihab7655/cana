@@ -37,27 +37,7 @@ button:hover {
     background-color: #0056b3; /* لون الخلفية عند التحويم */
 }
 
-/* تنسيقات النموذج */
-form {
-    background-color: #fff; /* لون الخلفية */
-    padding: 20px;
-    border-radius: 8px; /* الحواف الدائرية */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* الظل */
-    max-width: 800px;
-    width: 100%;
-    margin: 20px auto;
-    box-sizing: border-box; /* Ensure padding is included in width calculation */
-}
 
-label, input, select, button, p {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-input, select {
-    height: 40px;
-}
 
 .date-field {
     width: calc(33.33% - 8px); /* العرض محسوب */
