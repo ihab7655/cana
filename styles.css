@@ -1,16 +1,4 @@
-}
 
-/* تنسيقات الجسم */
-body {
-    font-family: var(--font-family); /* نوع الخط */
-    background-color: var(--background-color); /* لون الخلفية */
-    color: var(--text-color); /* لون النص */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
 
 /* تنسيقات الرأس والتذييل */
 header, footer {
