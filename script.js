@@ -37,13 +37,7 @@ function toggleApplicationNumberField() {
 }
 
 function checkStatus() {
-  const loadingScreen = document.getElementById('loadingScreen');
-  if (loadingScreen) {
-    loadingScreen.style.display = 'flex'; // عرض شاشة التحميل
-  } else {
-    console.error('Element with id "loadingScreen" not found.');
-  }
-
+  showLoader();
   setTimeout(function() {
     const applicationNumber = document.getElementById('applicationNumber').value;
     const countryOfBirth = document.getElementById('countryOfBirth').value;
@@ -73,10 +67,17 @@ function checkStatus() {
       showResults(null);
     }
 
-    if (loadingScreen) {
-      loadingScreen.style.display = 'none'; // إخفاء شاشة التحميل
-    }
+    hideLoader();
   }, 3000); // مدة الانتظار 3 ثواني
+}
+
+function showLoader() {
+  document.getElementById('loader').style.display = 'flex';
+}
+
+function hideLoader() {
+  document.getElementById('loader').style.display = 'none';
+  document.getElementById('results-modal').style.display = 'block';
 }
 
 function showResults(data) {
