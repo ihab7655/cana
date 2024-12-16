@@ -101,4 +101,8 @@ function showResults(data) {
     errorMessage.style.display = 'block';
     modal.style.display = 'none';
   }
-<script> window.addEventListener('load', function () { setTimeout(function() { document.getElementById('loader').style.display = 'none'; document.getElementById('content').style.display = 'block'; }, 3000); // مدة 3 ثواني }); </script> </body> </html>
+}
+
+document.querySelector('.close').addEventListener('click', function() {
+  document.getElementById('results-modal').style.display = 'none';
+});
