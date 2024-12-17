@@ -1,2 +1,192 @@
+:root {
+    --primary-color: #dc3545; /* اللون الأساسي */
+    --secondary-color: #007bff; /* اللون الثانوي */
+    --background-color: #f8f9fa; /* لون الخلفية */
+    --text-color: #000; /* لون النص */
+    --highlight-color: red; /* إضافة لون النجوم */
+    --font-family: Arial, sans-serif; /* نوع الخط */
+}
 
+/* تنسيقات الجسم */
+body {
+    font-family: var(--font-family); /* نوع الخط */
+    background-color: var(--background-color); /* لون الخلفية */
+    color: var(--text-color); /* لون النص */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
+/* تنسيقات الرأس والتذييل */
+header, footer {
+    background-color: var(--primary-color); /* لون الخلفية */
+    color: white; /* لون النص */
+    padding: 10px;
+    text-align: center;
+}
+
+header p {
+    margin: 0;
+}
+
+/* تنسيقات الرئيسي */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* تنسيقات الشعار */
+.logo {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+.logo img {
+    max-width: 150px;
+}
+
+/* تنسيقات تعليمات النموذج */
+.instructions, .status-form {
+    background-color: #ffffff; /* لون الخلفية */
+    border-radius: 8px; /* الحواف الدائرية */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* الظل */
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+.instructions h2, .note strong, .features strong {
+    margin-top: 0;
+}
+
+.instructions p, .note p, .features p {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* تنسيقات الملاحظات والميزات */
+.note, .features {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* تنسيقات الأزرار */
+button {
+    background-color: var(--secondary-color); /* لون الخلفية */
+    color: white; /* لون النص */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px; /* الحواف الدائرية */
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s; /* تأثير الانتقال عند تغيير اللون */
+}
+
+button:hover {
+    background-color: #0056b3; /* لون الخلفية عند التحويم */
+}
+
+/* تنسيقات النموذج */
+form {
+    background-color: #fff; /* لون الخلفية */
+    padding: 20px;
+    border-radius: 8px; /* الحواف الدائرية */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* الظل */
+    max-width: 800px;
+    width: 100%;
+    margin: 20px auto;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+label, input, select, button, p {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+input, select {
+    height: 40px;
+}
+
+.date-field {
+    width: calc(33.33% - 8px); /* العرض محسوب */
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.date-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.required::after {
+    content: ' *';
+    color: var(--highlight-color); /* تغيير لون النجوم إلى الأحمر */
+}
+
+/* تنسيقات الأزرار */
+button {
+    background-color: #4CAF50; /* لون الخلفية */
+    color: white; /* لون النص */
+    padding: 10px;
+    border: none;
+    border-radius: 4px; /* الحواف الدائرية */
+    cursor: pointer;
+    height: 50px;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #45a049; /* لون الخلفية عند التحويم */
+}
+
+#applicationNumberField {
+    display: none;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    text-transform: lowercase;
+}
+
+.instructions h2, .instructions p {
+    text-align: center;
+}
+
+/* تنسيقات الشاشة المنبثقة */
+#results-modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+#results-content {
+    background-color: #fefefe; /* لون الخلفية */
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 600px; 
+    border-radius: 8px; /* الحواف الدائرية */
+}
+
+.close {
+    color: #aaa;
+    float: right
