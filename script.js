@@ -28,32 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     console.error('Element with id "countryOfBirth" not found.'); // عنصر select غير موجود
   }
-
-  // تحديد عناصر النموذج التي يجب ملؤها
-  const statusFormElements = document.querySelectorAll('#statusForm input[required], #statusForm select[required]');
-
-  // إضافة رسالة تنبيه لكل حقل مطلوب لم يتم ملؤه
-  statusFormElements.forEach(element => {
-    const warningMessage = document.createElement('span');
-    warningMessage.style.color = 'red';
-    warningMessage.style.display = 'none';
-    warningMessage.textContent = 'يرجى تعبئة الحقل';
-    element.parentElement.appendChild(warningMessage);
-
-    // التحقق من ملء جميع الحقول المطلوبة وإظهار رسالة التنبيه
-    element.addEventListener('input', function() {
-      if (element.value) {
-        warningMessage.style.display = 'none';
-      } else {
-        warningMessage.style.display = 'inline';
-      }
-    });
-
-    // تحقق أولي عند تحميل الصفحة
-    if (!element.value) {
-      warningMessage.style.display = 'inline';
-    }
-  });
 });
 
 function toggleApplicationNumberField() {
