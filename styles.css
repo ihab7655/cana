@@ -148,22 +148,12 @@ label {
     width: 80%; 
     max-width: 600px; 
     border-radius: 8px;
-}
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
 }
 table {
     width: 100%;
     border-collapse: collapse;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
 }
 th, td {
     padding: 10px;
