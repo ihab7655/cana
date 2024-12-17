@@ -72,7 +72,7 @@ function checkStatus() {
 }
 
 function showLoader() {
-  document.getElementById('loader').style.display = 'flex';
+  document.getElementById('loader').style.display = 'none';
 }
 
 function hideLoader() {
