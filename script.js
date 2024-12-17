@@ -24,6 +24,16 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     console.error('Element with id "countryOfBirth" not found.');
   }
+
+  const statusFormElements = document.querySelectorAll('#statusForm input[required], #statusForm select[required]');
+  const checkStatusButton = document.querySelector('#statusForm button');
+
+  statusFormElements.forEach(element => {
+    element.addEventListener('input', function() {
+      const allFieldsFilled = Array.from(statusFormElements).every(input => input.value);
+      checkStatusButton.disabled = !allFieldsFilled;
+    });
+  });
 });
 
 function toggleApplicationNumberField() {
@@ -37,7 +47,6 @@ function toggleApplicationNumberField() {
 }
 
 function checkStatus() {
-  showLoader();
   setTimeout(function() {
     const applicationNumber = document.getElementById('applicationNumber').value;
     const countryOfBirth = document.getElementById('countryOfBirth').value;
@@ -66,17 +75,7 @@ function checkStatus() {
     } else {
       showResults(null);
     }
-
-    hideLoader();
   }, 3000); // مدة الانتظار 3 ثواني
-}
-
-function showLoader() {
-  document.getElementById('loader').style.display = 'none';
-}
-
-function hideLoader() {
-  document.getElementById('loader').style.display = 'none';
 }
 
 function showResults(data) {
