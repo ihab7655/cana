@@ -31,27 +31,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // تحديد عناصر النموذج التي يجب ملؤها
   const statusFormElements = document.querySelectorAll('#statusForm input[required], #statusForm select[required]');
-  const checkStatusButton = document.querySelector('#statusForm button');
 
+  // إضافة رسالة تنبيه لكل حقل مطلوب لم يتم ملؤه
   statusFormElements.forEach(element => {
-    // إنشاء رسالة تنبيه صغيرة
     const warningMessage = document.createElement('span');
     warningMessage.style.color = 'red';
     warningMessage.style.display = 'none';
     warningMessage.textContent = 'يرجى تعبئة الحقل';
     element.parentElement.appendChild(warningMessage);
 
+    // التحقق من ملء جميع الحقول المطلوبة وإظهار رسالة التنبيه
     element.addEventListener('input', function() {
-      const allFieldsFilled = Array.from(statusFormElements).every(input => input.value);
-
-      // إظهار أو إخفاء رسالة التنبيه بناءً على ملء الحقل
       if (element.value) {
         warningMessage.style.display = 'none';
       } else {
         warningMessage.style.display = 'inline';
       }
-
-      checkStatusButton.disabled = !allFieldsFilled;
     });
 
     // تحقق أولي عند تحميل الصفحة
@@ -107,7 +102,10 @@ const usersDatabase = [
 ];
 
 function checkStatus() {
-  // محاكاة التحقق من حالة الطلب بمدة انتظار 3 ثواني
+  // إظهار شاشة الانتظار
+  document.getElementById('loader').style.display = 'block';
+
+  // محاكاة التحقق من حالة الطلب بمدة انتظار 2 ثواني
   setTimeout(function() {
     const applicationNumber = document.getElementById('applicationNumber').value;
     const countryOfBirth = document.getElementById('countryOfBirth').value;
@@ -128,13 +126,16 @@ function checkStatus() {
       user.expiryDay === expiryDay && user.expiryMonth === expiryMonth && user.expiryYear === expiryYear
     );
 
+    // إخفاء شاشة الانتظار بعد 2 ثواني
+    document.getElementById('loader').style.display = 'none';
+
     // إظهار النتائج المناسبة
     if (user) {
       showResults(user);
     } else {
       showResults(null); // إظهار رسالة خطأ إذا كانت البيانات غير صحيحة
     }
-  }, 3000); // مدة الانتظار 3 ثواني
+  }, 2000); // مدة الانتظار 2 ثواني
 }
 
 function showResults(data) {
