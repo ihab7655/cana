@@ -54,7 +54,7 @@ const usersDatabase = [
     expiryMonth: '07',
     expiryYear: '2034',
     status: 'Under Processing',
-    submissionDate: '2024-12-16',
+    submissionDate: '16-12-2024',
     applicantName: 'HAMZE ALI',
     notes: 'None'
   },
