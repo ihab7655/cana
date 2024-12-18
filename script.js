@@ -133,7 +133,10 @@ if (data.status === 'Approved') {
   statusElem.style.color = 'green'; // تغيير اللون إلى الأخضر إذا كانت الحالة "Approved"
 } else if (data.status === 'Under Processing') {
   statusElem.style.color = 'yellow'; // تغيير اللون إلى الأصفر إذا كانت الحالة "Under Processing"
+} else if (data.status === 'Canceled') {
+  statusElem.style.color = 'red'; // تغيير اللون إلى الأحمر إذا كانت الحالة "Canceled"
 }
+
 
     // تغيير لون النص في خانة الملاحظات إلى الأحمر
     notesElem.style.color = 'None';
