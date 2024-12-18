@@ -53,7 +53,7 @@ const usersDatabase = [
     expiryDay: '23',
     expiryMonth: '07',
     expiryYear: '2034',
-    status: 'Accepted',
+    status: 'Approved',
     submissionDate: '18-12-2024',
     applicantName: 'HAMZE ALI',
     notes: '✔️'
@@ -129,8 +129,8 @@ function showResults(data) {
     applicantNameElem.textContent = data.applicantName;
     notesElem.textContent = data.notes;
     
-if (data.status === 'Accepted') {
-  statusElem.style.color = 'green'; // تغيير اللون إلى الأخضر إذا كانت الحالة "Accepted"
+if (data.status === 'Approved') {
+  statusElem.style.color = 'green'; // تغيير اللون إلى الأخضر إذا كانت الحالة "Approved"
 } else if (data.status === 'Under Processing') {
   statusElem.style.color = 'yellow'; // تغيير اللون إلى الأصفر إذا كانت الحالة "Under Processing"
 }
