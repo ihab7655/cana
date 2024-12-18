@@ -53,10 +53,10 @@ const usersDatabase = [
     expiryDay: '23',
     expiryMonth: '07',
     expiryYear: '2034',
-    status: 'Under Processing',
-    submissionDate: '16-12-2024',
+    status: 'Accepted',
+    submissionDate: '18-12-2024',
     applicantName: 'HAMZE ALI',
-    notes: 'None'
+    notes: '✔️'
   },
   {
     applicationNumber: 'x789012',
@@ -128,9 +128,15 @@ function showResults(data) {
     submissionDateElem.textContent = data.submissionDate;
     applicantNameElem.textContent = data.applicantName;
     notesElem.textContent = data.notes;
+    
+if (data.status === 'Accepted') {
+  statusElem.style.color = 'green'; // تغيير اللون إلى الأخضر إذا كانت الحالة "Accepted"
+} else if (data.status === 'Under Processing') {
+  statusElem.style.color = 'yellow'; // تغيير اللون إلى الأصفر إذا كانت الحالة "Under Processing"
+}
 
     // تغيير لون النص في خانة الملاحظات إلى الأحمر
-    notesElem.style.color = 'red';
+    notesElem.style.color = 'None';
 
     errorMessage.style.display = 'none'; // إخفاء رسالة الخطأ
     modal.style.display = 'block'; // إظهار النافذة المنبثقة بالنتائج
