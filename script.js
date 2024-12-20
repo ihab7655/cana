@@ -68,10 +68,10 @@ const usersDatabase = [
     expiryDay: '07',
     expiryMonth: '06',
     expiryYear: '2026',
-    status: 'Under Processing',
+    status: 'Approved',
     submissionDate: '18-12-2024',
     applicantName: 'MOHAMED ABDO ADAM HAMID',
-    notes: '⏳'
+    notes: '✔️'
   }
 ];
 
