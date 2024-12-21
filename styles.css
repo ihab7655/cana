@@ -1,133 +1,201 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>e visa canada</title>
-  <link rel="stylesheet" href="https://canada-e-visa.github.io/cana/styles.css">
-  <link rel="stylesheet" href="https://canada-e-visa.github.io/cana/loader.css">
-  <link rel="icon" href="https://i.imgur.com/Y18mhHE.jpeg" type="image/x-icon">
-
-</head>
-<body>
-  <!-- شاشة التحميل -->
-  <div id="loader" style="display: none;">
-    <p class="loading-text">Wait please...</p>
-    <div class="spinner"></div>
-  </div>
-
-  <!-- المحتوى الرئيسي -->
-  <header>
-    <p aria-label="Important notice">All information must be entered correctly in the verification table fields. Entering incorrect information may result in no results.</p>
-  </header>
-  <div class="logo">
-    <img src="https://i.imgur.com/aQQeebm.png" alt="eVisa Immigration Logo">
-  </div>
-  <main>
-    <div class="instructions">
-      <h2>Welcome to Canada e-Visa</h2>
-      <p>Have you applied for a Canada e-Visa?</p>
-      <hr>
-      <div class="note">
-        <strong>If You Apply, Make Sure That:</strong>
-        <p>✅ You Will Be Visiting the Country for a Maximum of 6 Months</p>
-        <p>✅ You Are Travelling for Business, Medical Treatment, Leisure or a Conference</p>
-      </div>
-      <div class="features">
-        <strong>Features of the Canada E-Visa</strong>
-        <p>✅ Quick Completion, Easy Application, No Fingerprint Required</p>
-      </div>
-    </div>
-
-    <div style="height: 40px;"></div>
-
-    <form id="statusForm" method="post" class="status-form">
-      <div class="header">
-        <img src="https://i.imgur.com/MoDufVO.jpeg" alt="Logo" style="max-width: 100px; height: auto;">
-        <h2>Check your status</h2>
-      </div>
-      <select id="status" name="status" required class="required" onchange="toggleApplicationNumberField()">
-        <option value="">Please select</option>
-        <option value="new-applicant">I am a new applicant. I want to check my status</option>
-      </select>
-
-      <div id="applicationNumberField" style="display: none;">
-        <label for="applicationNumber" class="required">application number</label>
-        <input type="text" id="applicationNumber" name="applicationNumber">
-        <p>This number, which begins with the letter J, can be found at the top of the email you received when your e visa was Start applying.</p>
-      </div>
-
-      <label for="countryOfBirth" class="required">country / territory of issue</label>
-      <select id="countryOfBirth" name="countryOfBirth" required>
-        <option value="">Please select</option>
-      </select>
-
-      <label for="passportNumber" class="required">passport number</label>
-      <input type="text" id="passportNumber" name="passportNumber" required>
-
-      <label for="issueDate" class="required">date of issue of passport</label>
-      <div class="date-container">
-        <select id="issueDay" name="issueDay" required class="date-field">
-          <option value="">Please select</option>
-        </select>
-        <select id="issueMonth" name="issueMonth" required class="date-field">
-          <option value="">Please select</option>
-        </select>
-        <select id="issueYear" name="issueYear" required class="date-field">
-          <option value="">Please select</option>
-        </select>
-      </div>
-
-      <label for="expiryDate" class="required">date of expiry of passport</label>
-      <div class="date-container">
-        <select id="expiryDay" name="expiryDay" required class="date-field">
-          <option value="">Please select</option>
-        </select>
-        <select id="expiryMonth" name="expiryMonth" required class="date-field">
-          <option value="">Please select</option>
-        </select>
-        <select id="expiryYear" name="expiryYear" required class="date-field">
-          <option value="">Please select</option>
-        </select>
-      </div>
-
-      <button type="button" onclick="checkStatus()">check status</button>
-    </form>
-
-    <div id="results-modal" style="display: none;">
-      <div id="results-content">
-        <span class="close">&times;</span>
-        <h2>Application Status</h2>
-        <table border="1">
-          <thead>
-            <tr>
-              <th>order number</th>
-              <th>Order Status</th>
-              <th>Submission date</th>
-              <th>Applicant's name</th>
-              <th>comments</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td id="resultApplicationNumber"></td>
-              <td id="resultStatus"></td>
-              <td id="resultSubmissionDate"></td>
-              <td id="resultApplicantName"></td>
-              <td id="resultNotes"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <p id="errorMessage" style="display: none;">Sorry, no request matches this information..</p>
-  </main>
-  <footer>
-    <p>&copy; 2024 Electronic Travel e-visa - Canada. Todos los derechos reservados.</p>
-  </footer>
-
-  <!-- تضمين رابط لملف JavaScript -->
-  <script src="https://canada-e-visa.github.io/cana/script.js"></script>
-</body>
-</html>
+:root {
+    --primary-color: #dc3545;
+    --secondary-color: #007bff;
+    --background-color: #f8f9fa;
+    --text-color: #000;
+    --font-family: Arial, sans-serif;
+}
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header, footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+header p {
+    margin: 0;
+}
+main {
+    flex: 1;
+    padding: 20px;
+}
+.logo {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+.logo img {
+    max-width: 150px;
+}
+.instructions, .status-form {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+.instructions h2, .note strong, .features strong {
+    margin-top: 0;
+}
+.instructions p, .note p, .features p {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+.note, .features {
+    margin-top: 20px;
+    text-align: center;
+}
+button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #0056b3;
+}
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    margin: 20px auto;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+label, input, select, button, p {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+input, select {
+    height: 40px;
+}
+.date-field {
+    width: calc(33.33% - 8px);
+    display: inline-block;
+    margin-right: 8px;
+}
+.date-container {
+    display: flex;
+    justify-content: space-between;
+}
+.required::after {
+    content: ' *';
+    color: red;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 50px;
+    font-size: 18px;
+}
+button:hover {
+    background-color: #45a049;
+}
+#applicationNumberField {
+    display: none;
+}
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+label {
+    font-weight: bold;
+    text-transform: lowercase;
+}
+.instructions h2, .instructions p {
+    text-align: center;
+}
+#results-modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+#results-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 600px; 
+    border-radius: 8px;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: #f2f2f2;
+}
+td {
+    background-color: #fff;
+}
+#errorMessage {
+    display: none;
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
+@media (max-width: 600px) {
+    .logo img {
+        max-width: 100px; 
+    }
+    .instructions, .status-form, form {
+        padding: 10px;
+    }
+    button {
+        padding: 8px;
+        font-size: 16px;
+        height: auto;
+    }
+    input, select {
+        height: 35px;
+    }
+    .date-field {
+        width: calc(33.33% - 6px);
+        margin-right: 6px;
+    }
+    #results-content {
+        width: 90%; /* Adjust width for smaller screens */
+        margin: 25% auto; /* Adjust margin for smaller screens */
+    }
+    .close {
+        font-size: 24px; /* Adjust close button size for smaller screens */
+    }
+}
