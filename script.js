@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.error('Element with id "countryOfBirth" not found.');
   }
 
-    // إضافة القيم إلى عناصر select الخاصة بالتواريخ
+  // إضافة القيم إلى عناصر select الخاصة بالتواريخ
   const days = Array.from({ length: 31 }, (_, i) => String(i + 1).padStart(2, '0')); // الأيام من 01 إلى 31
   const months = Array.from({ length: 12 }, (_, i) => String(i + 1).padStart(2, '0')); // الأشهر من 01 إلى 12
   const issueYears = Array.from({ length: 2024 - 1980 + 1 }, (_, i) => 1980 + i); // السنوات من 1980 إلى 2024
@@ -87,6 +87,7 @@ function toggleApplicationNumberField() {
   }
 }
 
+
 // قاعدة بيانات افتراضية للمستخدمين
 const usersDatabase = [
   {
@@ -99,10 +100,17 @@ const usersDatabase = [
     expiryDay: '27',
     expiryMonth: '09',
     expiryYear: '2033',
-    status: 'Under Processing',
+    status: 'Processed',
     submissionDate: '19-12-2024',
     applicantName: 'TAHA ALDANNAWI',
-    notes: '⏳'
+    notes: '✔️',
+    visaDetails: {
+      visaNumber: 'E-299300',
+      visaResult: 'Approved',
+      approvalDate: '23-12-2024',
+      nameSurname: 'TAHA ALDANNAWI',
+      comments: '🎉'
+    }
   },
   {
     applicationNumber: 'x789012',
@@ -117,7 +125,14 @@ const usersDatabase = [
     status: 'Under Processing',
     submissionDate: '19-12-2024',
     applicantName: 'TAHA ALDANNAWI',
-    notes: '⏳'
+    notes: '⏳',
+    visaDetails: {
+      visaNumber: 'V789012',
+      visaResult: 'Under Processing',
+      approvalDate: '21-12-2024',
+      nameSurname: 'Jane Smith',
+      comments: '⏳'
+    }
   }
 ];
 
@@ -159,7 +174,6 @@ function checkStatus() {
 }
 
 function showResults(data) {
-  // إظهار النتائج في نافذة منبثقة
   const modal = document.getElementById('results-modal');
   const applicationNumberElem = document.getElementById('resultApplicationNumber');
   const statusElem = document.getElementById('resultStatus');
@@ -175,17 +189,23 @@ function showResults(data) {
     applicantNameElem.textContent = data.applicantName;
     notesElem.textContent = data.notes;
 
-    if (data.status === 'Approved') {
-  statusElem.style.color = 'green'; // تغيير اللون إلى الأخضر إذا كانت الحالة "Approved"
-} else if (data.status === 'Under Processing') {
-  statusElem.style.color = 'Gold'; // تغيير اللون إلى الأصفر إذا كانت الحالة "Under Processing"
-} else if (data.status === 'Canceled') {
-  statusElem.style.color = 'red'; // تغيير اللون إلى الأحمر إذا كانت الحالة "Canceled"
-}
+    switch (data.status) {
+      case 'Approved':
+        statusElem.style.color = 'green';
+        break;
+      case 'Under Processing':
+        statusElem.style.color = 'Gold';
+        break;
+      case 'Canceled':
+        statusElem.style.color = 'red';
+        break;
+      case 'Processed':
+        statusElem.style.color = 'blue';
+        showAdditionalTable(data.visaDetails);
+        break;
+    }
 
-    // تغيير لون النص في خانة الملاحظات إلى الأحمر
-    notesElem.style.color = 'red';
-
+    notesElem.style.color = 'red'; // تغيير لون النص في خانة الملاحظات إلى الأحمر
     errorMessage.style.display = 'none'; // إخفاء رسالة الخطأ
     modal.style.display = 'block'; // إظهار النافذة المنبثقة بالنتائج
   } else {
@@ -194,7 +214,25 @@ function showResults(data) {
   }
 }
 
+function showAdditionalTable(visaDetails) {
+  const additionalTableContainer = document.getElementById('additionalTableContainer');
+  const visaNumberElem = document.getElementById('visaNumber');
+  const visaResultElem = document.getElementById('visaResult');
+  const approvalDateElem = document.getElementById('approvalDate');
+  const nameSurnameElem = document.getElementById('nameSurname');
+  const visaCommentsElem = document.getElementById('visaComments');
+
+  visaNumberElem.textContent = visaDetails.visaNumber;
+  visaResultElem.textContent = visaDetails.visaResult;
+  approvalDateElem.textContent = visaDetails.approvalDate;
+  nameSurnameElem.textContent = visaDetails.nameSurname;
+  visaCommentsElem.textContent = visaDetails.comments;
+
+  additionalTableContainer.style.display = 'block'; // إظهار الجدول الجديد
+}
+
 // إغلاق النافذة المنبثقة عند النقر على زر الإغلاق
 document.querySelector('.close').addEventListener('click', function() {
   document.getElementById('results-modal').style.display = 'none';
 });
+``
