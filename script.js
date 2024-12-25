@@ -87,28 +87,27 @@ function toggleApplicationNumberField() {
   }
 }
 
-
 // قاعدة بيانات افتراضية للمستخدمين
 const usersDatabase = [
   {
-    applicationNumber: 'J902812',
-    countryOfBirth: 'Lebanon',
-    passportNumber: 'LR3724072',
-    issueDay: '28',
-    issueMonth: '09',
-    issueYear: '2023',
-    expiryDay: '27',
-    expiryMonth: '09',
-    expiryYear: '2033',
-    status: 'Processed',
-    submissionDate: '19-12-2024',
-    applicantName: 'TAHA ALDANNAWI',
-    notes: '✔️',
+    applicationNumber: 'J902822',
+    countryOfBirth: 'Syria',
+    passportNumber: 'N 014233721',
+    issueDay: '05',
+    issueMonth: '10',
+    issueYear: '2020',
+    expiryDay: '04',
+    expiryMonth: '10',
+    expiryYear: '2026',
+    status: 'Under Processing',
+    submissionDate: '25-12-2024',
+    applicantName: 'JA*** HA****',
+    notes: '⏳',
     visaDetails: {
-      visaNumber: 'E-299300',
+      visaNumber: 'E-29013',
       visaResult: 'Approved',
-      approvalDate: '23-12-2024',
-      nameSurname: 'TAHA ALDANNAWI',
+      approvalDate: '28-12-2024',
+      nameSurname: 'JAMIL HAIDAR',
       comments: '🎉'
     }
   },
@@ -192,30 +191,34 @@ function showResults(data) {
     switch (data.status) {
       case 'Approved':
         statusElem.style.color = 'green';
+        modal.style.display = 'block'; // إظهار النافذة المنبثقة
         break;
       case 'Under Processing':
-        statusElem.style.color = 'Gold';
+        statusElem.style.color = 'gold';
+        modal.style.display = 'block'; // إظهار النافذة المنبثقة
         break;
       case 'Canceled':
         statusElem.style.color = 'red';
+        modal.style.display = 'block'; // إظهار النافذة المنبثقة
         break;
       case 'Processed':
         statusElem.style.color = 'blue';
-        showAdditionalTable(data.visaDetails);
+        modal.style.display = 'none'; // إخفاء النافذة المنبثقة الأولى
+        showAdditionalTable(data.visaDetails); // إظهار النافذة المنبثقة الثانية
         break;
     }
 
     notesElem.style.color = 'red'; // تغيير لون النص في خانة الملاحظات إلى الأحمر
     errorMessage.style.display = 'none'; // إخفاء رسالة الخطأ
-    modal.style.display = 'block'; // إظهار النافذة المنبثقة بالنتائج
   } else {
     errorMessage.style.display = 'block'; // إظهار رسالة الخطأ
     modal.style.display = 'none'; // إخفاء النافذة المنبثقة
   }
 }
 
+
 function showAdditionalTable(visaDetails) {
-  const additionalTableContainer = document.getElementById('additionalTableContainer');
+  const additionalModal = document.getElementById('additional-results-modal');
   const visaNumberElem = document.getElementById('visaNumber');
   const visaResultElem = document.getElementById('visaResult');
   const approvalDateElem = document.getElementById('approvalDate');
@@ -228,11 +231,19 @@ function showAdditionalTable(visaDetails) {
   nameSurnameElem.textContent = visaDetails.nameSurname;
   visaCommentsElem.textContent = visaDetails.comments;
 
-  additionalTableContainer.style.display = 'block'; // إظهار الجدول الجديد
+  additionalModal.style.display = 'block'; // إظهار النافذة المنبثقة الجديدة
+
+  // ضبط النافذة الثانية لتظهر تحت النافذة الأولى
+  additionalModal.style.position = 'absolute';
+  additionalModal.style.top = 'calc(50% + 10px)'; // ضبط الموضع لتكون تحت النافذة الأولى
+  additionalModal.style.left = '50%';
+  additionalModal.style.transform = 'translate(-50%, 0)';
 }
 
-// إغلاق النافذة المنبثقة عند النقر على زر الإغلاق
-document.querySelector('.close').addEventListener('click', function() {
-  document.getElementById('results-modal').style.display = 'none';
+// إغلاق النوافذ المنبثقة عند النقر على زر الإغلاق
+document.querySelectorAll('.close').forEach(closeBtn => {
+  closeBtn.addEventListener('click', function() {
+    const modals = document.querySelectorAll('#results-modal, #additional-results-modal');
+    modals.forEach(modal => modal.style.display = 'none');
+  });
 });
-``
