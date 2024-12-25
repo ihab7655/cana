@@ -1,297 +1,258 @@
 :root {
-  --primary-color: #dc3545;
-  --secondary-color: #007bff;
-  --background-color: #f8f9fa;
-  --text-color: #000;
-  --highlight-color: green;
-  --font-family: Arial, sans-serif;
+    --primary-color: #dc3545;
+    --secondary-color: #007bff;
+    --background-color: #f8f9fa;
+    --text-color: #000;
+    --highlight-color: green;
+    --font-family: Arial, sans-serif;
 }
 
 body {
-  font-family: var(--font-family);
-  background-color: var(--background-color);
-  color: var(--text-color);
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  overflow-x: hidden;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* إزالة التمرير يمين ويسار */
 }
 
 header, footer {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 10px;
-  text-align: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    text-align: center;
 }
 
 header p {
-  margin: 0;
+    margin: 0;
 }
 
 main {
-  flex: 1;
-  padding: 20px;
+    flex: 1;
+    padding: 20px;
 }
 
 .logo {
-  display: flex;
-  justify-content: flex-start;
-  padding: 10px 20px;
-  margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    margin-top: 20px;
 }
 
 .logo img {
-  max-width: 150px;
+    max-width: 150px;
 }
 
-.instructions, .status-form, .results-container, .status-container {
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-#additionalTableContainer, .status-container {
-  width: 100%;
-  max-width: 100%;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow-x: auto;
-}
-
-#additionalTableContainer table, .status-container table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-#additionalTableContainer th, td, .status-container th, td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: left;
-}
-
-#additionalTableContainer th, .status-container th {
-  background-color: #f2f2f2;
+.instructions, .status-form, .results-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+    overflow-x: auto; /* إضافة تمرير أفقي للحاويات */
 }
 
 .instructions h2, .note strong, .features strong {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .instructions p, .note p, .features p {
-  font-size: 0.9em;
-  margin-top: 10px;
+    font-size: 0.9em;
+    margin-top: 10px;
 }
 
 .note, .features {
-  margin-top: 20px;
-  text-align: center;
+    margin-top: 20px;
+    text-align: center;
 }
 
 button {
-  background-color: var(--secondary-color);
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background-color 0.3s;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #0056b3;
+    background-color: #0056b3;
 }
 
 form {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  width: 100%;
-  margin: 20px auto;
-  box-sizing: border-box;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    margin: 20px auto;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
 }
 
 label, input, select, button, p {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 input, select {
-  height: 40px;
+    height: 40px;
 }
 
 .date-field {
-  width: calc(33.33% - 8px);
-  display: inline-block;
-  margin-right: 8px;
+    width: calc(33.33% - 8px);
+    display: inline-block;
+    margin-right: 8px;
 }
 
 .date-container {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .required::after {
-  content: ' *';
-  color: red;
+    content: ' *';
+    color: red;
 }
 
 button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  height: 50px;
-  font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 50px;
+    font-size: 18px;
 }
 
 button:hover {
-  background-color: #45a049;
+    background-color: #45a049;
 }
 
 #applicationNumberField {
-  display: none;
+    display: none;
 }
 
 .header {
-  text-align: center;
-  margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 label {
-  font-weight: bold;
-  text-transform: lowercase;
+    font-weight: bold;
+    text-transform: lowercase;
 }
 
 .instructions h2, .instructions p {
-  text-align: center;
+    text-align: center;
 }
 
-#results-modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
-  box-sizing: border-box;
-  padding: 20px;
+#results-modal, #additional-results-modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
 }
 
-#results-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 600px;
-  border-radius: 8px;
-  box-sizing: border-box;
-  overflow-y: auto;
-  max-height: 80vh;
+#additional-results-modal {
+    top: 50%; /* وضع النافذة الثانية تحت النافذة الأولى */
+}
+
+#results-content, #additional-results-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 600px; 
+    border-radius: 8px;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+    overflow-x: auto; /* إضافة تمرير أفقي للحاويات */
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
-  box-sizing: border-box;
+    width: 100%;
+    border-collapse: collapse;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
 }
 
 th, td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-  word-wrap: break-word;
-  white-space: normal;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word; /* إضافة لتفادي التشوه عند عرض النصوص */
+    white-space: normal; /* إضافة لتفادي التشوه عند عرض النصوص */
 }
 
 th {
-  background-color: #f2f2f2;
+    background-color: #f2f2f2;
 }
 
 td {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 #errorMessage {
-  display: none;
-  color: red;
-  text-align: center;
-  margin-top: 20px;
+    display: none;
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* تنسيق خاص بالجدول الثاني */
+#additional-results-content td {
+    font-weight: bold;
+    color: var(--highlight-color);
 }
 
 @media (max-width: 600px) {
-  .logo img {
-    max-width: 100px;
-  }
-  .instructions, .status-form, form, .results-container, #additionalTableContainer, .status-container {
-    padding: 10px;
-  }
-  button {
-    padding: 8px;
-    font-size: 16px;
-    height: auto;
-  }
-  input, select {
-    height: 35px;
-  }
-  .date-field {
-    width: calc(33.33% - 6px);
-    margin-right: 6px;
-  }
-  #results-modal {
-    padding: 10px;
-  }
-  #results-content {
-    width: 90%;
-    margin: 20% auto;
-    padding: 10px;
-  }
-  th, td {
-    padding: 8px;
-  }
+    .logo img {
+        max-width: 100px; 
+    }
+    .instructions, .status-form, form, .results-container, #applicationNumberField, #visaDetails {
+        padding: 10px;
+    }
+    button {
+        padding: 8px;
+        font-size: 16px;
+        height: auto;
+    }
+    input, select {
+        height: 35px;
+    }
+    .date-field {
+        width: calc(33.33% - 6px);
+        margin-right: 6px;
+    }
+    #results-content, #additional-results-content {
+        width: 90%; /* Adjust width for smaller screens */
+        margin: 15% auto; /* Adjust margin for smaller screens */
+    }
+    th, td {
+        padding: 8px; /* تصغير حجم الخلايا لتناسب الشاشات الصغيرة */
+    }
+    .close {
+        font-size: 24px; /* Adjust close button size for smaller screens */
+    }
 }
 
-/* Here is the merged CSS */
-.status-container {
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  overflow-x: auto; /* Ensuring horizontal scrolling */
-}
-
-.status-container table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.status-container th, .status-container td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: left;
-}
-
-.status-container th {
-  background-color: #f2f2f2;
+.instructions, .status-form, form, .results-container, #applicationNumberField, #visaDetails {
+    box-sizing: border-box;
+    overflow-x: auto; /* إضافة تمرير أفقي للحاويات */
 }
