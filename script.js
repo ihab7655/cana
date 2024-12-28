@@ -104,7 +104,7 @@ const usersDatabase = [
     applicantName: 'JA*** HA****',
     notes: '⏳',
     visaDetails: {
-      visaNumber: 'E-29013',
+      visaNumber: 'E-2**13',
       visaResult: 'Approved',
       approvalDate: '28-12-2024',
       nameSurname: 'JAMIL HAIDAR',
