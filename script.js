@@ -99,7 +99,7 @@ const usersDatabase = [
     expiryDay: '04',
     expiryMonth: '10',
     expiryYear: '2026',
-    status: 'Under Processing',
+    status: 'Processed',
     submissionDate: '25-12-2024',
     applicantName: 'JA*** HA****',
     notes: '⏳',
@@ -108,7 +108,7 @@ const usersDatabase = [
       visaResult: 'Approved',
       approvalDate: '28-12-2024',
       nameSurname: 'JAMIL HAIDAR',
-      comments: '🎉'
+      comments: '✅'
     }
   },
   {
@@ -130,7 +130,7 @@ const usersDatabase = [
       visaResult: 'Under Processing',
       approvalDate: '21-12-2024',
       nameSurname: 'Jane Smith',
-      comments: '⏳'
+      comments: '🎉'
     }
   }
 ];
