@@ -99,16 +99,16 @@ const usersDatabase = [
     expiryDay: '26',
     expiryMonth: '04',
     expiryYear: '2031',
-    status: 'Under Processing',
+    status: 'Processed',
     submissionDate: '03-01-2025',
     applicantName: 'MAR**** MOH**** SHAK** AL* MOH**** DI**',
     notes: '⏳',
     visaDetails: {
       visaNumber: 'E-2**13',
       visaResult: 'Approved',
-      approvalDate: '28-12-2024',
+      approvalDate: '05-01-2025',
       nameSurname: 'MARZOUK MOHAMED SHAKER ALY MOHAMED DIAB',
-      comments: '✅'
+      comments: 'The visa has been sent to your email ✅'
     }
   },
   {
