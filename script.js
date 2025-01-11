@@ -119,7 +119,7 @@ const usersDatabase = [
     issueMonth: '07',
     issueYear: '2024',
     expiryDay: '08',
-    expiryMonth: '07',
+    expiryMonth: '01',
     expiryYear: '2027',
     status: 'Under Processing',
     submissionDate: '11-01-2025',
