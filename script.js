@@ -121,16 +121,16 @@ const usersDatabase = [
     expiryDay: '08',
     expiryMonth: '01',
     expiryYear: '2027',
-    status: 'Under Processing',
+    status: 'Processed',
     submissionDate: '11-01-2025',
     applicantName: 'AH*** BIR**',
     notes: '⏳',
     visaDetails: {
-      visaNumber: 'V789012',
-      visaResult: 'Under Processing',
-      approvalDate: '21-12-2024',
-      nameSurname: 'Jane Smith',
-      comments: '🎉'
+      visaNumber: 'E-2**13',
+      visaResult: 'Approved',
+      approvalDate: '14-01-2025',
+      nameSurname: 'AHMAD BIRAM',
+      comments: 'The visa has been sent to your email ✅'
     }
   }
 ];
