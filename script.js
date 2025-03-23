@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // إضافة القيم إلى عناصر select الخاصة بالتواريخ
   const days = Array.from({ length: 31 }, (_, i) => String(i + 1).padStart(2, '0')); // الأيام من 01 إلى 31
   const months = Array.from({ length: 12 }, (_, i) => String(i + 1).padStart(2, '0')); // الأشهر من 01 إلى 12
-  const issueYears = Array.from({ length: 2024 - 1980 + 1 }, (_, i) => 1980 + i); // السنوات من 1980 إلى 2024
+  const issueYears = Array.from({ length: 2025 - 1980 + 1 }, (_, i) => 1980 + i); // السنوات من 1980 إلى 2024
   const expiryYears = Array.from({ length: 2055 - 1980 + 1 }, (_, i) => 1980 + i); // السنوات من 1980 إلى 2055
 
   // التحقق من وجود عناصر select الخاصة بالتواريخ قبل إضافة الخيارات
