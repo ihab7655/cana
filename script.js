@@ -99,7 +99,7 @@ const usersDatabase = [
     expiryDay: '10',
     expiryMonth: '02',
     expiryYear: '2031',
-    status: 'Processed',
+    status: 'Under Processing',
     submissionDate: '21-03-2025',
     applicantName: 'AL** AL***AN-LA** AL***AN-LA**K AL***AN-M**S IB***IM',
     notes: '⏳',
